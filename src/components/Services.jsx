@@ -143,94 +143,142 @@ const Services = () => {
         >
           <path 
             d="M 2,0 L 2,100" 
-            fill="none" 
-            stroke="#cbd5e1" 
-            strokeWidth="4" 
-            strokeDasharray="4 6" 
-            vectorEffect="non-scaling-stroke"
-          />
-          <mask id="path-mask-mobile">
-            <motion.path 
-              d="M 2,0 L 2,100" 
-              fill="none" 
-              stroke="white" 
-              strokeWidth="4" 
-              style={{ pathLength }}
-              vectorEffect="non-scaling-stroke"
-            />
-          </mask>
-          <path 
-            d="M 2,0 L 2,100" 
-            fill="none" 
-            stroke="black" 
-            strokeWidth="4" 
-            strokeDasharray="4 6" 
-            mask="url(#path-mask-mobile)"
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
+            fill="none" ```jsx
+import React from 'react';
 
-        {/* Cards Container */}
-        <div className="flex flex-col gap-8 md:gap-12 items-center md:block relative z-10 w-full pt-4 md:pt-0 pb-12 md:pb-0">
-          
-          <TagCard 
-            number="01"
-            title="Define"
-            text="We start by understanding your goals, user requirements, and technical constraints to lay a rock-solid foundation for the project."
-            className="md:absolute md:top-[10px] md:right-[5%] lg:right-[10%] rotate-2 md:rotate-6"
-            aosType="fade-left"
-            aosDelay="100"
-            pathLength={pathLength}
-            containerRef={containerRef}
-          />
+const Services = () => {
 
-          <TagCard 
-            number="02"
-            title="Design"
-            text="Creating intuitive, pixel-perfect user interfaces and wireframes that guarantee an engaging and accessible user experience."
-            className="md:absolute md:top-[450px] md:left-[5%] lg:left-[10%] -rotate-2 md:-rotate-6"
-            aosType="fade-right"
-            aosDelay="200"
-            pathLength={pathLength}
-            containerRef={containerRef}
-          />
+  const skillGroups = [
+    {
+      number: '01',
+      title: 'Programming',
+      description:
+        'Building problem-solving solutions using programming fundamentals and object-oriented concepts.',
+      skills: ['Python', 'Java', 'C', 'JavaScript']
+    },
+    {
+      number: '02',
+      title: 'Web Development',
+      description:
+        'Creating responsive and modern web applications with clean and user-friendly interfaces.',
+      skills: ['HTML', 'CSS', 'React', 'JavaScript', 'Firebase']
+    },
+    {
+      number: '03',
+      title: 'AI & Machine Learning',
+      description:
+        'Exploring artificial intelligence and machine learning to develop intelligent solutions for real-world problems.',
+      skills: ['Machine Learning', 'AI', 'Computer Vision', 'Data Analysis']
+    },
+    {
+      number: '04',
+      title: 'Tools & Technologies',
+      description:
+        'Using modern development tools and platforms to build, test and manage projects.',
+      skills: ['Git', 'GitHub', 'Google Colab', 'SQL', 'VS Code']
+    }
+  ];
 
-          <TagCard 
-            number="03"
-            title="Build"
-            text="Developing scalable frontend architectures and secure backend systems using the latest modern tech stack."
-            className="md:absolute md:top-[700px] md:right-[5%] lg:right-[15%] rotate-1 md:rotate-3"
-            aosType="fade-left"
-            aosDelay="300"
-            pathLength={pathLength}
-            containerRef={containerRef}
-          />
+  return (
+    <section
+      id="skills"
+      className="bg-gray-50 py-24 px-6 md:px-12 w-full"
+    >
 
-          <TagCard 
-            number="04"
-            title="Launch"
-            text="Rigorous testing, optimization, and seamless deployment to cloud infrastructure, followed by ongoing support."
-            className="md:absolute md:top-[1050px] md:left-[15%] lg:left-[25%] -rotate-1 md:-rotate-3"
-            aosType="fade-right"
-            aosDelay="400"
-            pathLength={pathLength}
-            containerRef={containerRef}
-          />
+      <div className="max-w-6xl mx-auto">
 
-          {/* Hand-drawn end text */}
-          <div 
-            data-aos="fade-in" 
-            data-aos-delay="600"
-            className="hidden md:block absolute top-[1250px] left-[60%] font-['Caveat',cursive] text-3xl text-gray-600 rotate-6"
-          >
-            Ready to be delivered!
-          </div>
+        {/* Heading */}
+        <div data-aos="fade-up" className="mb-16">
+
+          <p className="text-sm font-bold tracking-[0.3em] uppercase text-gray-500 mb-3">
+            Skills & Technologies
+          </p>
+
+          <h2 className="text-5xl md:text-7xl font-black text-black leading-none">
+            What I
+            <br />
+            <span className="text-gray-400">Work With.</span>
+          </h2>
+
+        </div>
+
+        {/* Skills */}
+        <div className="grid md:grid-cols-2 gap-6">
+
+          {skillGroups.map((group, index) => (
+
+            <div
+              key={group.number}
+              data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
+              data-aos-delay={index * 100}
+              className="bg-white border border-gray-200 rounded-3xl p-8 md:p-10 hover:bg-black hover:text-white transition-all duration-500 group"
+            >
+
+              {/* Number */}
+              <div className="flex items-start justify-between mb-10">
+
+                <span className="text-5xl font-black text-gray-200 group-hover:text-gray-700 transition-colors">
+                  {group.number}
+                </span>
+
+                <span className="text-2xl group-hover:translate-x-2 transition-transform">
+                  ↗
+                </span>
+
+              </div>
+
+              {/* Title */}
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                {group.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-500 group-hover:text-gray-400 leading-relaxed mb-7">
+                {group.description}
+              </p>
+
+              {/* Skill Tags */}
+              <div className="flex flex-wrap gap-2">
+
+                {group.skills.map((skill) => (
+
+                  <span
+                    key={skill}
+                    className="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium group-hover:bg-gray-800 group-hover:text-white transition-colors"
+                  >
+                    {skill}
+                  </span>
+
+                ))}
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+        {/* Bottom statement */}
+        <div
+          data-aos="fade-up"
+          data-aos-delay="500"
+          className="mt-16 border-t border-gray-200 pt-8"
+        >
+
+          <p className="text-gray-500 text-lg md:text-xl max-w-3xl">
+            I am continuously learning new technologies and improving my
+            skills by building projects, participating in technical
+            activities and exploring innovative solutions.
+          </p>
 
         </div>
 
       </div>
+
     </section>
   );
 };
 
 export default Services;
+```
