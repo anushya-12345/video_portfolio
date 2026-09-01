@@ -26,7 +26,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-black">
+    <section
+  id="home"
+  className="relative w-full min-h-screen
 
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
