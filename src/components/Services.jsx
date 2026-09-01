@@ -101,88 +101,37 @@ const Services = () => {
         <svg 
           className="hidden md:block absolute top-0 left-0 w-full h-[1350px] pointer-events-none z-0" 
           viewBox="0 0 1000 1350" 
-          preserveAspectRatio="none"
-        >
-          {/* Faint background path (optional guide) */}
-          <path 
-            d="M 650,200 C 400,300 200,400 300,600 C 400,800 750,750 700,950 C 650,1150 400,1150 300,1200" 
-            fill="none" 
-            stroke="#cbd5e1" 
-            strokeWidth="2" 
-            strokeDasharray="8 10" 
-          />
-
-          {/* Mask to reveal the dashed path based on scroll */}
-          <mask id="path-mask">
-            <motion.path 
-              d="M 650,200 C 400,300 200,400 300,600 C 400,800 750,750 700,950 C 650,1150 400,1150 300,1200" 
-              fill="none" 
-              stroke="white" 
-              strokeWidth="20" 
-              style={{ pathLength }}
-            />
-          </mask>
-
-          {/* The actual dashed line that gets revealed */}
-          <path 
-            d="M 650,200 C 400,300 200,400 300,600 C 400,800 750,750 700,950 C 650,1150 400,1150 300,1200" 
-            fill="none" 
-            stroke="black" 
-            strokeWidth="2" 
-            strokeDasharray="8 10" 
-            mask="url(#path-mask)"
-            className="drop-shadow-sm"
-          />
-        </svg>
-
-        {/* Mobile Animated Vertical Dashed Line */}
-        <svg 
-          className="md:hidden absolute top-0 left-[50%] -translate-x-1/2 w-4 h-[100%] pointer-events-none z-0" 
-          viewBox="0 0 4 100" 
-          preserveAspectRatio="none"
-        >
-          <path 
-            d="M 2,0 L 2,100" 
-            fill="none" 
+          preserveAspectRatio="none"```jsx
 import React from 'react';
 
 const Services = () => {
-
-  const skillGroups = [
+  const services = [
     {
       number: '01',
-      title: 'Programming',
-      description:
-        'Building problem-solving solutions using programming fundamentals and object-oriented concepts.',
-      skills: ['Python', 'Java', 'C', 'JavaScript']
+      title: 'AI / ML',
+      text: 'Exploring Artificial Intelligence and Machine Learning concepts to build intelligent and practical solutions.'
     },
     {
       number: '02',
-      title: 'Web Development',
-      description:
-        'Creating responsive and modern web applications with clean and user-friendly interfaces.',
-      skills: ['HTML', 'CSS', 'React', 'JavaScript', 'Firebase']
+      title: 'Full Stack Development',
+      text: 'Building modern web applications and learning frontend and backend technologies.'
     },
     {
       number: '03',
-      title: 'AI & Machine Learning',
-      description:
-        'Exploring artificial intelligence and machine learning to develop intelligent solutions for real-world problems.',
-      skills: ['Machine Learning', 'AI', 'Computer Vision', 'Data Analysis']
+      title: 'Cloud Computing',
+      text: 'Developing an interest in cloud technologies, deployment, scalable applications and cloud-based solutions.'
     },
     {
       number: '04',
-      title: 'Tools & Technologies',
-      description:
-        'Using modern development tools and platforms to build, test and manage projects.',
-      skills: ['Git', 'GitHub', 'Google Colab', 'SQL', 'VS Code']
+      title: 'Innovation',
+      text: 'Interested in transforming ideas into useful technology solutions through research, experimentation and development.'
     }
   ];
 
   return (
     <section
       id="skills"
-      className="bg-gray-50 py-24 px-6 md:px-12 w-full"
+      className="bg-white py-24 px-6 md:px-12 w-full"
     >
 
       <div className="max-w-6xl mx-auto">
@@ -190,68 +139,49 @@ const Services = () => {
         {/* Heading */}
         <div data-aos="fade-up" className="mb-16">
 
-          <p className="text-sm font-bold tracking-[0.3em] uppercase text-gray-500 mb-3">
-            Skills & Technologies
+          <p className="text-sm font-bold tracking-[0.3em] uppercase text-gray-500 mb-4">
+            What I Explore
           </p>
 
           <h2 className="text-5xl md:text-7xl font-black text-black leading-none">
-            What I
+            Skills &
             <br />
-            <span className="text-gray-400">Work With.</span>
+            <span className="text-gray-400">Interests.</span>
           </h2>
 
         </div>
 
-        {/* Skills */}
-        <div className="grid md:grid-cols-2 gap-6">
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-          {skillGroups.map((group, index) => (
+          {services.map((service, index) => (
 
             <div
-              key={group.number}
-              data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
+              key={service.number}
+              data-aos="fade-up"
               data-aos-delay={index * 100}
-              className="bg-white border border-gray-200 rounded-3xl p-8 md:p-10 hover:bg-black hover:text-white transition-all duration-500 group"
+              className="group border border-gray-200 rounded-3xl p-8 md:p-10 hover:bg-black hover:text-white transition-all duration-500"
             >
 
-              {/* Number */}
-              <div className="flex items-start justify-between mb-10">
+              <div className="flex justify-between items-start mb-12">
 
-                <span className="text-5xl font-black text-gray-200 group-hover:text-gray-700 transition-colors">
-                  {group.number}
+                <span className="text-sm font-bold text-gray-400 group-hover:text-gray-500">
+                  {service.number}
                 </span>
 
-                <span className="text-2xl group-hover:translate-x-2 transition-transform">
+                <span className="text-2xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
                   ↗
                 </span>
 
               </div>
 
-              {/* Title */}
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                {group.title}
+              <h3 className="text-2xl md:text-3xl font-black mb-4">
+                {service.title}
               </h3>
 
-              {/* Description */}
-              <p className="text-gray-500 group-hover:text-gray-400 leading-relaxed mb-7">
-                {group.description}
+              <p className="text-gray-500 group-hover:text-gray-400 leading-relaxed">
+                {service.text}
               </p>
-
-              {/* Skill Tags */}
-              <div className="flex flex-wrap gap-2">
-
-                {group.skills.map((skill) => (
-
-                  <span
-                    key={skill}
-                    className="px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium group-hover:bg-gray-800 group-hover:text-white transition-colors"
-                  >
-                    {skill}
-                  </span>
-
-                ))}
-
-              </div>
 
             </div>
 
@@ -259,18 +189,42 @@ const Services = () => {
 
         </div>
 
-        {/* Bottom statement */}
-        <div
-          data-aos="fade-up"
-          data-aos-delay="500"
-          className="mt-16 border-t border-gray-200 pt-8"
-        >
+        {/* Technologies */}
+        <div data-aos="fade-up" className="mt-16">
 
-          <p className="text-gray-500 text-lg md:text-xl max-w-3xl">
-            I am continuously learning new technologies and improving my
-            skills by building projects, participating in technical
-            activities and exploring innovative solutions.
+          <p className="text-xs uppercase tracking-[0.25em] text-gray-500 mb-6">
+            Technologies & Concepts
           </p>
+
+          <div className="flex flex-wrap gap-3">
+
+            {[
+              'Python',
+              'C',
+              'Java',
+              'HTML',
+              'CSS',
+              'JavaScript',
+              'React.js',
+              'Flask',
+              'Git',
+              'GitHub',
+              'AI / ML',
+              'LLM',
+              'RAG',
+              'Cloud Computing'
+            ].map((technology) => (
+
+              <span
+                key={technology}
+                className="px-5 py-2.5 rounded-full bg-gray-100 text-gray-700 text-sm font-semibold hover:bg-black hover:text-white transition-colors"
+              >
+                {technology}
+              </span>
+
+            ))}
+
+          </div>
 
         </div>
 
