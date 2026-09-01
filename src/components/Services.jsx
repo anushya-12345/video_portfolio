@@ -143,7 +143,7 @@ const Services = () => {
         >
           <path 
             d="M 2,0 L 2,100" 
-            fill="none" ```jsx
+            fill="none" 
 import React from 'react';
 
 const Services = () => {
