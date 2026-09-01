@@ -1,4 +1,4 @@
-```jsx
+
 import React from 'react';
 
 const Footer = () => {
@@ -134,4 +134,4 @@ const Footer = () => {
 };
 
 export default Footer;
-```
+
