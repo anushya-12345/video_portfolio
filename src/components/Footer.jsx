@@ -1,54 +1,137 @@
+```jsx
 import React from 'react';
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-[#111111] text-[#d4d4d4] py-16 px-6 md:px-12 w-full font-mono text-[10px] md:text-xs tracking-widest flex flex-col justify-between min-h-[50vh]">
-      
-      {/* Top Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full font-medium">
-        <div className="flex flex-col gap-1">
-          <p>Cinematic & Creative Production</p>
-          <p>Lighting, Editing, Photo</p>
-          <p>Motion Graphics</p>
+    <footer className="bg-black text-white py-16 px-6 md:px-12 w-full">
+
+      <div className="max-w-7xl mx-auto">
+
+        {/* Top Row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 border-b border-white/10 pb-12">
+
+          {/* About */}
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-gray-500 mb-4">
+              About
+            </p>
+
+            <p className="text-gray-300 leading-relaxed max-w-xs">
+              Computer Science Engineering student passionate about
+              Artificial Intelligence, Full Stack Development, Cloud
+              Computing and innovative technology.
+            </p>
+          </div>
+
+          {/* Interests */}
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-gray-500 mb-4">
+              Interests
+            </p>
+
+            <div className="flex flex-wrap gap-2 max-w-xs">
+
+              {[
+                'AI / ML',
+                'Web Development',
+                'Cloud Computing',
+                'Innovation'
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="px-3 py-1.5 rounded-full border border-white/10 text-gray-400 text-xs"
+                >
+                  {item}
+                </span>
+              ))}
+
+            </div>
+          </div>
+
+          {/* Location */}
+          <div className="md:text-right">
+            <p className="text-xs uppercase tracking-[0.25em] text-gray-500 mb-4">
+              Location
+            </p>
+
+            <p className="text-gray-300">
+              Bhavani / Erode
+            </p>
+
+            <p className="text-gray-500 mt-1">
+              Tamil Nadu, India
+            </p>
+          </div>
+
         </div>
-        
-        <div className="flex flex-col gap-1 md:items-center">
-          <p>5+ years of experience</p>
-          <a href="#work" className="underline hover:text-white transition-colors mt-1 underline-offset-4 decoration-1">View Work</a>
+
+        {/* Huge Name */}
+        <div className="py-20 overflow-hidden">
+
+          <h2 className="text-[20vw] md:text-[15vw] leading-none font-black tracking-tighter text-center select-none">
+            ANUSHYA
+          </h2>
+
         </div>
-        
-        <div className="flex flex-col gap-1 md:items-end">
-          <p>Worldwide Available</p>
-          <p>{new Date().getFullYear()}</p>
+
+        {/* Bottom Row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end border-t border-white/10 pt-8">
+
+          {/* Copyright */}
+          <div>
+            <p className="text-gray-500 text-xs">
+              © {year} Anushya S
+            </p>
+
+            <p className="text-gray-600 text-xs mt-2">
+              Built with React
+            </p>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex justify-start md:justify-center gap-6">
+
+            <a
+              href="https://github.com/anushya-12345"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors text-sm"
+            >
+              GitHub ↗
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/anushya-s-150491292/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors text-sm"
+            >
+              LinkedIn ↗
+            </a>
+
+          </div>
+
+          {/* Email */}
+          <div className="md:text-right">
+
+            <a
+              href="mailto:anushyas086@gmail.com"
+              className="text-gray-300 hover:text-white transition-colors text-sm"
+            >
+              anushyas086@gmail.com
+            </a>
+
+          </div>
+
         </div>
+
       </div>
 
-      {/* Middle Huge Text */}
-      <div className="w-full flex justify-center items-center py-20 md:py-24 overflow-hidden">
-        <h2 className="text-[18vw] md:text-[16vw] leading-none font-sans font-bold tracking-tighter lowercase select-none text-[#f4f4f4] w-full text-center">
-          leeshark
-        </h2>
-      </div>
-
-      {/* Bottom Row */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 w-full items-end font-medium">
-        <div className="flex flex-col gap-6">
-          <a href="#contact" className="underline hover:text-white transition-colors underline-offset-4 decoration-1 font-bold">Contact</a>
-          <p className="text-white/60 font-mono text-[9px] md:text-[10px]">
-            &copy; {new Date().getFullYear()} Leeshark Studio | Built with React
-          </p>
-        </div>
-        
-        <div className="flex flex-col gap-1 md:items-center">
-          <a href="mailto:hello@leeshark.com" className="underline hover:text-white transition-colors underline-offset-4 decoration-1 lowercase">hello@leeshark.com</a>
-        </div>
-        
-        <div className="flex flex-col gap-1 md:items-end">
-          <a href="#" className="underline hover:text-white transition-colors underline-offset-4 decoration-1">Privacy Policy</a>
-        </div>
-      </div>
     </footer>
   );
 };
 
 export default Footer;
+```
