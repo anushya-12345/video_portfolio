@@ -35,7 +35,6 @@ const Hero = () => {
       {/* Decorative circles */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl"></div>
-
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex items-center px-6 md:px-12 lg:px-20">
 
