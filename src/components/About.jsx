@@ -1,91 +1,148 @@
+```jsx
 import React from 'react';
-import stackImage from '../assets/about/image.png';
-import reactImage from '../assets/about/react.png';
-import nodeImage from '../assets/about/node.png';
-import mongoImage from '../assets/about/mongodb.png';
 
 const About = () => {
   return (
-    <section className="bg-[#ff2a2a] pt-20 pb-40 px-6 md:px-12 w-full relative overflow-hidden font-sans">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
-        
-        {/* Left Side: ID Badge and Skills */}
-        <div className="flex flex-col items-center w-full md:w-[350px] shrink-0 mt-12 md:mt-0">
-          
-          <div data-aos="drop-bounce" className="relative flex justify-center w-full">
-            {/* Lanyard string */}
-            <div className="absolute -top-32 left-1/2 w-3 h-40 bg-black transform -translate-x-1/2 shadow-inner z-0"></div>
-            {/* Lanyard clip */}
-            <div className="absolute -top-6 left-1/2 w-6 h-12 bg-gray-300 rounded border border-gray-400 transform -translate-x-1/2 z-10 shadow-[0_2px_10px_rgba(0,0,0,0.3)]"></div>
-            
-            {/* Badge Card */}
-            <div className="bg-gray-900 w-full max-w-[280px] rounded-2xl p-3 shadow-[0_20px_40px_rgba(0,0,0,0.4)] relative z-20 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
-              {/* Cutout Hole */}
-              <div className="absolute -top-3 left-1/2 w-16 h-6 bg-gray-900 rounded-t-xl transform -translate-x-1/2 flex justify-center items-center">
-                <div className="w-8 h-2 bg-black/30 rounded-full shadow-inner"></div>
-              </div>
-              {/* Image Container */}
-              <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent">
-                <img 
-                  src={stackImage} 
-                  alt="Profile" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+    <section
+      id="about"
+      className="bg-white py-24 px-6 md:px-12 w-full relative overflow-hidden font-sans"
+    >
+      <div className="max-w-6xl mx-auto">
 
-        </div>
-
-        {/* Right Side: Info Content */}
-        <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-white mt-8 md:mt-0 relative z-20">
-          
-          <h2 className="text-4xl md:text-5xl font-black text-black mb-4">Hello!</h2>
-          <p className="text-lg font-bold mb-12 leading-relaxed max-w-3xl text-red-50">
-            Hi, my name is <span className="text-black text-xl font-black mx-1 tracking-wide uppercase">Leeshark</span>, a passionate full-stack developer based in [Location], dedicated to crafting clean, functional, and highly scalable web applications.
+        {/* Section Heading */}
+        <div data-aos="fade-up" className="mb-16">
+          <p className="text-sm font-bold tracking-[0.3em] uppercase text-gray-500 mb-3">
+            About Me
           </p>
 
-          {/* Horizontal Skills Row (Transparent & Large) */}
-          <div className="flex items-center gap-10 mt-8">
-            <img 
-              data-aos="zoom-in" data-aos-delay="300"
-              src={reactImage} 
-              alt="React" 
-              className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
-            />
-            <img 
-              data-aos="zoom-in" data-aos-delay="450"
-              src={nodeImage} 
-              alt="Node.js" 
-              className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
-            />
-            <img 
-              data-aos="zoom-in" data-aos-delay="600"
-              src={mongoImage} 
-              alt="MongoDB" 
-              className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
-            />
+          <h2 className="text-5xl md:text-7xl font-black text-black leading-none">
+            Turning Ideas
+            <br />
+            <span className="text-gray-400">Into Technology.</span>
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-14 items-start">
+
+          {/* About Text */}
+          <div data-aos="fade-right">
+
+            <p className="text-xl md:text-2xl font-semibold text-gray-900 leading-relaxed">
+              Hi, I'm <span className="font-black">Anushya S</span>.
+            </p>
+
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed mt-6">
+              I am a Computer Science Engineering student with a strong
+              interest in software development, artificial intelligence,
+              machine learning and innovative technology solutions.
+            </p>
+
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed mt-5">
+              I enjoy transforming ideas into practical applications by
+              combining programming, modern web technologies and emerging
+              technologies. I am continuously learning and working on
+              projects that solve real-world problems.
+            </p>
+
+            <p className="text-gray-600 text-base md:text-lg leading-relaxed mt-5">
+              My goal is to grow as a technology professional while building
+              useful, scalable and impactful solutions.
+            </p>
+
+          </div>
+
+          {/* Highlights */}
+          <div
+            data-aos="fade-left"
+            data-aos-delay="200"
+            className="grid grid-cols-2 gap-4"
+          >
+
+            <div className="bg-black text-white rounded-2xl p-7 min-h-[170px] flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+              <span className="text-4xl">01</span>
+              <div>
+                <h3 className="text-xl font-bold">AI & ML</h3>
+                <p className="text-gray-400 text-sm mt-2">
+                  Intelligent technology solutions
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gray-100 rounded-2xl p-7 min-h-[170px] flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+              <span className="text-4xl">02</span>
+              <div>
+                <h3 className="text-xl font-bold">Development</h3>
+                <p className="text-gray-500 text-sm mt-2">
+                  Modern web applications
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gray-100 rounded-2xl p-7 min-h-[170px] flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+              <span className="text-4xl">03</span>
+              <div>
+                <h3 className="text-xl font-bold">Innovation</h3>
+                <p className="text-gray-500 text-sm mt-2">
+                  Real-world problem solving
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-black text-white rounded-2xl p-7 min-h-[170px] flex flex-col justify-between hover:scale-105 transition-transform duration-300">
+              <span className="text-4xl">04</span>
+              <div>
+                <h3 className="text-xl font-bold">Continuous Learning</h3>
+                <p className="text-gray-400 text-sm mt-2">
+                  Always exploring new technologies
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Technology Tags */}
+        <div data-aos="fade-up" data-aos-delay="300" className="mt-16">
+
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-gray-400 mb-5">
+            Areas of Interest
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+
+            {[
+              'Python',
+              'Java',
+              'C',
+              'JavaScript',
+              'React',
+              'HTML & CSS',
+              'Machine Learning',
+              'Artificial Intelligence',
+              'Firebase',
+              'Git & GitHub',
+              'SQL'
+            ].map((skill) => (
+              <span
+                key={skill}
+                className="px-5 py-2.5 rounded-full border border-gray-200 bg-gray-50 text-gray-800 font-medium text-sm hover:bg-black hover:text-white transition-all duration-300"
+              >
+                {skill}
+              </span>
+            ))}
+
           </div>
 
         </div>
+
       </div>
 
-      {/* Torn paper divider at bottom */}
-      <div className="absolute bottom-0 left-0 w-full pointer-events-none z-30 transform translate-y-1">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-12 md:h-20 fill-white">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.62,189.5,99.8,242.79,81.82,282.88,63.6,321.39,56.44Z"></path>
-        </svg>
-      </div>
+      {/* Decorative element */}
+      <div className="absolute -right-20 top-20 w-72 h-72 rounded-full bg-gray-100 blur-3xl pointer-events-none"></div>
 
-      {/* Decorative stars */}
-      <div className="absolute top-10 right-10 md:right-20 text-black opacity-30 animate-pulse">
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z"/></svg>
-      </div>
-      <div className="absolute bottom-32 left-4 md:left-20 text-black opacity-30 animate-pulse" style={{ animationDelay: '1s' }}>
-        <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z"/></svg>
-      </div>
     </section>
   );
 };
 
 export default About;
+```
