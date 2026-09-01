@@ -32,7 +32,6 @@ const Hero = () => {
 
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
-
       {/* Decorative circles */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 left-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl"></div>
