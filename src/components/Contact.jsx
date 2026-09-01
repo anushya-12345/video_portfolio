@@ -1,126 +1,208 @@
-import React, { useRef } from 'react';
+```jsx
+import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Contact = () => {
-  const ref = useRef(null);
+
+  const ref = React.useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"]
+    offset: ['start end', 'end start']
   });
-  
-  // Parallax translation for the big text
-  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "30%"]);
+
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ['-20%', '30%']
+  );
 
   return (
-    <section ref={ref} id="contact" className="bg-[#0a0a0a] w-full min-h-screen relative overflow-hidden flex items-end pt-32 pb-0 md:pb-0 border-t border-gray-900">
-      {/* Huge Background Text */}
-      <motion.div 
+    <section
+      ref={ref}
+      id="contact"
+      className="bg-black w-full min-h-screen relative overflow-hidden flex items-end border-t border-gray-900"
+    >
+
+      {/* Background Text */}
+      <motion.div
         style={{ y }}
-        className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-center overflow-hidden pointer-events-none z-0 pt-16 md:pt-12"
+        className="absolute top-0 left-0 w-full h-full flex justify-center items-start overflow-hidden pointer-events-none z-0 pt-16"
       >
-        <h1 
-          className="text-[25vw] leading-[0.75] font-black text-white uppercase tracking-tighter select-none scale-y-[1.6] origin-top"
-          style={{ fontFamily: "'Impact', 'Arial Black', sans-serif" }}
+        <h1
+          className="text-[24vw] leading-none font-black text-white/[0.04] uppercase tracking-tighter select-none"
         >
-          Contact
+          CONTACT
         </h1>
       </motion.div>
 
-      {/* Form Card Overlay */}
-      <div className="relative z-10 w-full flex justify-end items-end">
-        <div 
+      {/* Contact Content */}
+      <div className="relative z-10 w-full">
+
+        <div
           data-aos="fade-up"
-          className="bg-[#ff2a2a] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between"
+          className="max-w-6xl mx-auto px-6 md:px-12 py-20 md:py-28"
         >
-          <div className="text-xs font-bold tracking-[0.2em] mb-12 md:mb-20 uppercase opacity-90">
-            Reach Us
+
+          {/* Heading */}
+          <div className="mb-16">
+
+            <p className="text-sm font-bold tracking-[0.3em] uppercase text-gray-500 mb-4">
+              Get In Touch
+            </p>
+
+            <h2 className="text-5xl md:text-7xl font-black text-white leading-none">
+              Let's Build
+              <br />
+              <span className="text-gray-500">Something.</span>
+            </h2>
+
+            <p className="text-gray-400 max-w-2xl mt-7 text-base md:text-lg leading-relaxed">
+              I'm always open to connecting with people who are interested
+              in technology, software development, artificial intelligence,
+              cloud computing and innovative ideas.
+            </p>
+
           </div>
 
-          <form className="flex flex-col gap-12 md:gap-16 w-full">
-            <div className="flex flex-col md:flex-row gap-12 md:gap-20 w-full">
-              {/* Left Column */}
-              <div className="flex-1 flex flex-col gap-10">
-                <div className="relative">
-                  <input 
-                    type="text" 
-                    id="firstName" 
-                    placeholder="First Name" 
-                    className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
-                  />
-                </div>
-                <div className="relative">
-                  <input 
-                    type="text" 
-                    id="lastName" 
-                    placeholder="Last Name" 
-                    className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
-                  />
-                </div>
-                <div className="relative">
-                  <input 
-                    type="email" 
-                    id="email" 
-                    placeholder="Email" 
-                    className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
-                  />
-                </div>
+          {/* Contact Cards */}
+          <div className="grid md:grid-cols-3 gap-5">
+
+            {/* Email */}
+            <a
+              href="mailto:anushyas086@gmail.com"
+              className="group bg-white/[0.05] border border-white/10 rounded-2xl p-7 hover:bg-white hover:text-black transition-all duration-500"
+            >
+
+              <div className="flex justify-between items-start">
+
+                <span className="text-gray-500 group-hover:text-gray-700">
+                  01
+                </span>
+
+                <span className="text-xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                  ↗
+                </span>
+
               </div>
 
-              {/* Right Column */}
-              <div className="flex-1 flex flex-col">
-                <div className="relative h-full flex flex-col">
-                  <textarea 
-                    id="message" 
-                    placeholder="Type your message here" 
-                    className="w-full h-full min-h-[120px] bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium resize-none rounded-none"
-                  ></textarea>
-                </div>
+              <h3 className="text-xl font-bold mt-12">
+                Email
+              </h3>
+
+              <p className="text-gray-400 group-hover:text-gray-600 mt-2 text-sm break-all">
+                anushyas086@gmail.com
+              </p>
+
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href="https://www.linkedin.com/in/anushya-s-150491292/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white/[0.05] border border-white/10 rounded-2xl p-7 hover:bg-white hover:text-black transition-all duration-500"
+            >
+
+              <div className="flex justify-between items-start">
+
+                <span className="text-gray-500 group-hover:text-gray-700">
+                  02
+                </span>
+
+                <span className="text-xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                  ↗
+                </span>
+
               </div>
+
+              <h3 className="text-xl font-bold mt-12">
+                LinkedIn
+              </h3>
+
+              <p className="text-gray-400 group-hover:text-gray-600 mt-2 text-sm">
+                Connect with me
+              </p>
+
+            </a>
+
+            {/* GitHub */}
+            <a
+              href="https://github.com/anushya-12345"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group bg-white/[0.05] border border-white/10 rounded-2xl p-7 hover:bg-white hover:text-black transition-all duration-500"
+            >
+
+              <div className="flex justify-between items-start">
+
+                <span className="text-gray-500 group-hover:text-gray-700">
+                  03
+                </span>
+
+                <span className="text-xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                  ↗
+                </span>
+
+              </div>
+
+              <h3 className="text-xl font-bold mt-12">
+                GitHub
+              </h3>
+
+              <p className="text-gray-400 group-hover:text-gray-600 mt-2 text-sm">
+                Explore my projects
+              </p>
+
+            </a>
+
+          </div>
+
+          {/* Bottom Information */}
+          <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between gap-6">
+
+            <div>
+              <p className="text-gray-500 text-xs uppercase tracking-widest">
+                Based in
+              </p>
+
+              <p className="text-white mt-2 font-medium">
+                Bhavani / Erode, Tamil Nadu
+              </p>
             </div>
 
-            {/* Bottom Section */}
-            <div className="flex flex-col md:flex-row gap-12 mt-4">
-              {/* Left text */}
-              <div className="flex-1 flex items-start gap-4 text-sm font-medium text-white/90">
-                <input 
-                  type="checkbox" 
-                  id="permission" 
-                  className="mt-1 w-4 h-4 rounded-sm border-white/40 bg-transparent text-white focus:ring-white focus:ring-offset-0 focus:ring-offset-transparent cursor-pointer" 
-                  style={{ accentColor: "white" }}
-                />
-                <label htmlFor="permission" className="cursor-pointer max-w-[280px] leading-snug">
-                  I give permission to contact me at this email address.
-                </label>
-              </div>
+            <div>
+              <p className="text-gray-500 text-xs uppercase tracking-widest">
+                Phone
+              </p>
 
-              {/* Right text & button */}
-              <div className="flex-1 flex flex-col gap-8 text-xs text-white/70 font-medium">
-                <p className="leading-relaxed max-w-[400px]">
-                  This site is protected by reCAPTCHA and the Google <a href="#" className="underline hover:text-white transition-colors">Privacy Policy</a> and <a href="#" className="underline hover:text-white transition-colors">Terms of Service</a> apply.
-                </p>
-                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6">
-                  <p className="max-w-[250px] leading-relaxed">
-                    For information on how to unsubscribe, please review our <a href="#" className="underline hover:text-white transition-colors">privacy policy</a>.
-                  </p>
-                  
-                  <button 
-                    type="submit" 
-                    className="px-8 py-3 rounded-full border border-white/40 text-white font-bold flex items-center justify-center gap-3 hover:bg-white hover:text-[#ff2a2a] transition-all duration-300 group whitespace-nowrap self-start sm:self-auto"
-                  >
-                    Send
-                    <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
+              <a
+                href="tel:8848131373"
+                className="text-white mt-2 block font-medium hover:text-gray-400 transition-colors"
+              >
+                +91 88481 31373
+              </a>
             </div>
-          </form>
+
+            <div>
+              <p className="text-gray-500 text-xs uppercase tracking-widest">
+                Open to
+              </p>
+
+              <p className="text-white mt-2 font-medium">
+                Internships & Opportunities
+              </p>
+            </div>
+
+          </div>
 
         </div>
+
       </div>
+
     </section>
   );
 };
 
 export default Contact;
+```
